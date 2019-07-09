@@ -9,11 +9,8 @@ import android.widget.Toast;
 
 import com.example.soundify.dto.LoginDTO;
 import com.example.soundify.dto.SessionDTO;
-import com.example.soundify.dto.SessionLoginDTO;
-import com.example.soundify.dto.SignupDTO;
 import com.example.soundify.service.LoginService;
 import com.example.soundify.service.NetworkProvider;
-import com.example.soundify.service.SignupService;
 
 import org.json.JSONObject;
 
@@ -55,11 +52,11 @@ public class Login extends AppCompatActivity {
         loginService = NetworkProvider.getClient().create(LoginService.class);
         LoginDTO loginDTO = new LoginDTO(email,password);
 
-        Call<SessionLoginDTO> sessionDTOCall = loginService.signup(loginDTO);
-        sessionDTOCall.enqueue(new Callback<SessionLoginDTO>() {
+        Call<SessionDTO> sessionDTOCall = loginService.signup(loginDTO);
+        sessionDTOCall.enqueue(new Callback<SessionDTO>() {
             @Override
-            public void onResponse(Call<SessionLoginDTO> call, Response<SessionLoginDTO> response) {
-                SessionLoginDTO sessionDTO = response.body();
+            public void onResponse(Call<SessionDTO> call, Response<SessionDTO> response) {
+                SessionDTO sessionDTO = response.body();
                 if (response.isSuccessful()) {
                     Intent intent = new Intent(Login.this, Home.class);
                     startActivity(intent);
@@ -74,7 +71,7 @@ public class Login extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<SessionLoginDTO> call, Throwable t) {
+            public void onFailure(Call<SessionDTO> call, Throwable t) {
                 Log.d("toz", t.toString());
             }
         });
