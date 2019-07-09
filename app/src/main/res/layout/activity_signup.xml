@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Signup">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Firstname"/>
+
+    <EditText
+        android:id="@+id/signup_activity_firstname_edt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lastname"
+        android:layout_marginTop="50dp"/>
+
+    <EditText
+        android:id="@+id/signup_activity_lastname_edt"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="email"
+        android:layout_marginTop="50dp"/>
+
+    <EditText
+        android:id="@+id/signup_activity_email_edt"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="confirm your mail"
+        android:layout_marginTop="50dp"/>
+
+    <EditText
+        android:id="@+id/signup_activity_confirm_mail_edt"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Password"
+        android:layout_marginTop="50dp"/>
+
+    <EditText
+        android:id="@+id/signup_activity_password_edt"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Confirm your password"
+        android:layout_marginTop="50dp"/>
+
+    <EditText
+        android:id="@+id/signup_activity_confirm_password_edt"
+        android:inputType="textPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <Button
+        android:id="@+id/signup_activity_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Valider"/>
+
+</LinearLayout>
