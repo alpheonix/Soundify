@@ -44,7 +44,7 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.MusicViewHol
         Log.d("bind",music.getTitle());
         musicViewHolder.titleTv.setText(music.getTitle());
         musicViewHolder.rankTv.setText(music.getRank());
-        musicViewHolder.durationRcv.setText(music.getDuration()+"secondes");
+        musicViewHolder.durationRcv.setText(music.getDuration()+" secondes");
 
         Glide.with(musicViewHolder.itemView).load(music.getMediumPic()).into(musicViewHolder.pictureImv);
 
