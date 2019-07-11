@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Soundify</string>
+    <string name="activity_login_email_tv">Email : </string>
+    <string name="activity_login__password_tv">Password :</string>
+    <string name="activity_login_confirm_button">Valider</string>
+    <string name="activity_detail_play_btn">Play</string>
+    <string name="activity_detail_placeholder_tv">TextView</string>
+    <string name="activity_main_login_btn">Login</string>
+    <string name="activity_main_signup_btn">Signup</string>
+    <string name="activity_signup_firstname_tv">Firstname</string>
+    <string name="activity_signup_lastname_tv">Lastname</string>
+    <string name="activity_signup_email_tv">email</string>
+    <string name="activity_signup_emailconfirm_tv">confirm your mail</string>
+    <string name="activity_signup_password_tv">Password</string>
+    <string name="activity_signup_passwordconfirm_tv">Confirm your password</string>
+    <string name="activity_signup_confirm_btn">Valider</string>
 </resources>

@@ -25,10 +25,11 @@
         android:id="@+id/rcv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="20dp"
+        android:textColor="@android:color/black"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="16dp"
-        android:text="TextView"
+        android:text="@string/activity_detail_placeholder_tv"
         app:layout_constraintStart_toEndOf="@+id/rcv_imageView"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -36,10 +37,11 @@
         android:id="@+id/rcv_duration"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="80dp"
-        android:text="TextView"
+        android:textColor="@android:color/black"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/activity_detail_placeholder_tv"
         app:layout_constraintStart_toEndOf="@+id/rcv_imageView"
         app:layout_constraintTop_toBottomOf="@+id/rcv_title" />
 
@@ -47,10 +49,11 @@
         android:id="@+id/rcv_rank"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="164dp"
-        android:layout_marginLeft="164dp"
-        android:layout_marginTop="28dp"
-        android:text="TextView"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:textColor="@android:color/black"
+        android:text="@string/activity_detail_placeholder_tv"
         app:layout_constraintStart_toEndOf="@+id/rcv_imageView"
         app:layout_constraintTop_toBottomOf="@+id/rcv_title" />
 </android.support.constraint.ConstraintLayout>
