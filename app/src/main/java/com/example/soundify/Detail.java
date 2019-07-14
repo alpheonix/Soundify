@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -32,7 +33,8 @@ public class Detail extends AppCompatActivity {
     Button playBtn;
     @BindView(R.id.detail_activity_imageView)
     ImageView imageView;
-
+    MediaPlayer mPlayer = new MediaPlayer();
+    boolean condition = true;
 
 
     @Override
@@ -46,7 +48,15 @@ public class Detail extends AppCompatActivity {
         String preview = extras.getString("musicPreview");
         String image = extras.getString("musicImage");
         String rank = extras.getString("musicRank");
+        Uri myUri = Uri.parse(preview);
 
+        mPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+        try {
+            mPlayer.setDataSource(getApplicationContext(), myUri);
+            mPlayer.prepare();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         Glide.with(Detail.this).load(image).into(imageView);
         durationTv.setText("Durée: "+duration+" secondes");
         titleTv.setText(title);
@@ -55,27 +65,28 @@ public class Detail extends AppCompatActivity {
         Button play = findViewById(R.id.detail_activity_play_button);
         play.setOnClickListener(v -> {
 
-            MediaPlayer mPlayer = new MediaPlayer();
+            Log.d("test", ( "test"+condition));
+            if(condition){
 
-            Uri myUri = Uri.parse(preview);
-
-            mPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
-
-            try {
-                mPlayer.setDataSource(getApplicationContext(), myUri);
-                mPlayer.prepare();
-
-                mPlayer.start();
-            } catch (IOException e) {
-                e.printStackTrace();
+                    condition = false;
+                    mPlayer.start();
+            }else{
+                mPlayer.pause();
+                condition = true;
             }
+
+
 
 
 
         });
     }
 
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        mPlayer.stop();
+    }
 }
 
 
