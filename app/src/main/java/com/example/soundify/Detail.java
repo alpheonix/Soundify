@@ -1,13 +1,10 @@
 package com.example.soundify;
 
-import android.content.Intent;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -18,7 +15,6 @@ import java.io.IOException;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class Detail extends AppCompatActivity {
 
@@ -33,7 +29,7 @@ public class Detail extends AppCompatActivity {
     Button playBtn;
     @BindView(R.id.detail_activity_imageView)
     ImageView imageView;
-    MediaPlayer mPlayer = new MediaPlayer();
+    MediaPlayer mediaPlayer = new MediaPlayer();
     boolean condition = true;
 
 
@@ -43,17 +39,17 @@ public class Detail extends AppCompatActivity {
         setContentView(R.layout.activity_detail);
         ButterKnife.bind(this);
         Bundle extras = getIntent().getExtras();
-        String title = extras.getString("musicTitle");
+        String title = extras.getString("");
         String duration = extras.getString("musicDuration");
         String preview = extras.getString("musicPreview");
         String image = extras.getString("musicImage");
         String rank = extras.getString("musicRank");
         Uri myUri = Uri.parse(preview);
 
-        mPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+        mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
         try {
-            mPlayer.setDataSource(getApplicationContext(), myUri);
-            mPlayer.prepare();
+            mediaPlayer.setDataSource(getApplicationContext(), myUri);
+            mediaPlayer.prepare();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -65,13 +61,13 @@ public class Detail extends AppCompatActivity {
         Button play = findViewById(R.id.detail_activity_play_button);
         play.setOnClickListener(v -> {
 
-            Log.d("test", ( "test"+condition));
+
             if(condition){
 
                     condition = false;
-                    mPlayer.start();
+                    mediaPlayer.start();
             }else{
-                mPlayer.pause();
+                mediaPlayer.pause();
                 condition = true;
             }
 
@@ -85,7 +81,7 @@ public class Detail extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        mPlayer.stop();
+        mediaPlayer.stop();
     }
 }
 

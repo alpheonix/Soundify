@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Soundify</string>
+    <string name="app_name">ComptinesZer</string>
     <string name="activity_login_email_tv">Email : </string>
     <string name="activity_login__password_tv">Password :</string>
     <string name="activity_login_confirm_button">Valider</string>
